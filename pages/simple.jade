@@ -1,0 +1,70 @@
+doctype html
+head
+  meta(charset="utf-8")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  title= state.title
+  - for (var kk = 0; kk < (state.meta || []).length; kk ++)
+    meta(name=state.meta[kk].name, property=state.meta[kk].property, content=state.meta[kk].content)
+  link(href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", rel="stylesheet")
+  style(type="text/css"): include simple.gen.css
+body.vote
+  script window.state = !{JSON.stringify(state)}
+  script: include ga.js
+  div.header= state.pageTitle
+  div.contents.vote
+    div.description= state.description
+    ul.choices
+      - for (var kk = 0; kk < (state.choices || []).length; kk ++)
+         li.choice(data-choice=state.choices[kk].choice)
+           i.fa.fa-square-o
+           i.fa.fa-check-square-o
+           span= " " + state.choices[kk].description
+    div.share.hidden
+      div SHARING OPTIONS
+      div.buttony
+       a.fa.fa-facebook &nbsp;&nbsp;
+       a.fa.fa-twitter
+       i.fa.fa-envelope-o
+    div.make
+      a.buttony(href="/") MAKE YOUR OWN POLL
+
+  div.contents.voting
+    div.description
+      i.fa.fa-spinner.fa-spin
+      span=" Your vote is being counted.."
+  div.contents.summarizing
+    div 
+      i.fa.fa-spinner.fa-spin
+      span= " Loading recent votes.."
+    div.description= state.description
+    table.choices
+      - for (var kk = 0; kk < (state.choices || []).length; kk ++)
+        tr.choice(data-choice=state.choices[kk].choice)
+          - topicChoices = state.summary && state.summary.counts[state.topic] || {}
+          td
+           div.percentage
+            div.meter
+            span= state.choices[kk].choice
+          td= topicChoices[state.choices[kk].choice] || '-'
+  div.contents.summarized
+    div.description= state.description
+    table.choices
+      - for (var kk = 0; kk < (state.choices || []).length; kk ++)
+        tr.choice(data-choice=state.choices[kk].choice)
+          - topicChoices = state.summary && state.summary.counts[state.topic] || {}
+          td
+           div.percentage
+            div.meter
+            span= state.choices[kk].choice
+          td.val= topicChoices[state.choices[kk].choice] || '-'
+    div.share.hidden
+      div SHARING OPTIONS
+      div.buttony
+        a.fa.fa-facebook &nbsp;&nbsp;
+        a.fa.fa-twitter
+        i.fa.fa-envelope-o
+    div.make
+      a.buttony(href="/") MAKE YOUR OWN POLL
+  script(src="//code.jquery.com/jquery-1.11.1.min.js")
+  script: include simple.gen.js
+  

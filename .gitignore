@@ -1,0 +1,7 @@
+node_modules/
+*.min.*
+*.gen.*
+.heroku
+*.data
+*.html
+vendor/

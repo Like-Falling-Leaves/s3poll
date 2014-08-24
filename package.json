@@ -1,0 +1,25 @@
+{
+  "name": "s3poll",
+  "description": "Manage polls on static S3-based websites",
+  "maintainers": [{"name": "Like FallingLeaves", "email": "likefallingleaves@gmail.com"}],
+  "author": {"name": "Like FallingLeaves", "email": "likefallingleaves@gmail.com"},
+  "version": "0.0.1",
+  "repository": { "type": "git", "url": "git://github.com/likefallingleaves/s3poll" },
+  "license": "MIT",
+  "main": "./index.js",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/likefallingleaves/s3poll",
+  "bugs": { "url": "https://github.com/likefallingleaves/s3poll/issues" },
+  "dependencies": {
+    "express": "4.8.4",
+    "jade" : "1.5.0",
+    "aws-sdk": "2.0.0-rc.14",
+    "cors": "2.3.1",
+    "lazy.js": "0.3.2",
+    "less" : "1.7.4",
+    "browserify": "5.10.0"
+  },
+  "devDependencies": {
+    "minimist": "1.1.0"
+  }
+}

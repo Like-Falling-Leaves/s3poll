@@ -1,0 +1,103 @@
+doctype html
+head
+  meta(charset="utf-8")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  title Fast, Free and Easy Polls
+  meta(name="description", content="The fastest way to create a simple poll and share it socially.")
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+  link(href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", rel="stylesheet")
+  style(type="text/css"): include make.gen.css
+body
+  script(src="//code.jquery.com/jquery-1.11.1.min.js")
+  script window.state = !{JSON.stringify(state)};
+  script: include ga.js
+  script: include make.gen.js
+  div.header FAST FREE EASY POLLS
+  div.contents
+    div.showbox-viewport
+     div.showbox
+       h2 FAST!
+       p It takes less than a minute to create a poll.  No fuss.  
+       p Just type in the question and the answers and you are good to go.
+     div.showbox
+       h2 FREE!
+       p No signups, no hassles, absolutely free.
+       p Creating a poll, sharing it as well as analyzing the results are free.  
+     div.showbox
+       h2 MOBILE!
+       p The polls are designed to look good and work well on mobile phones as well as desktops.
+     div.showbox
+       h2 SOCIAL!
+       p It is simple to share polls on all social media.  
+       p We even built a Twitter Photo Card to make it look great on Twitter.
+     div.showbox
+       h2 LIVE!
+       p Polls are analyzed realtime.  You can see the current responses as well as share the results.
+     div.showbox
+       h2 SIMPLE!
+       p It is as simple as it gets.
+       p Just type in the question & answers and you are done.
+       div.center(style='margin: -20px;')
+         button(name='get-started') Get Started!
+    div.list
+      ul
+       li <em>FAST:</em> Create a poll in under a min.
+       li <em>EASY:</em> No signups required.
+       li <em>FREE:</em> Create, share and see results.
+       li <em>SOCIAL:</em> FB/Twitter integrated.
+       li <em>MOBILE:</em> Optimized for mobile.
+       li <em>LIVE:</em> See results right away.
+       li <em>ANALYTICS:</em> Google analytics support is avalable.  Email <a href="mailto:likefallingleaves@gmail.com">here</a>.
+      p Get started, just fill the basic questions below and you are done.
+    div.examples.center
+      button(name='demos') Demos!
+    div.get-started.center
+      button(name='get-started') Let's Get Started!
+    form
+      div.form-elt
+        div.label Title
+        div.padding5
+          input(type="text", name='title', placeholder="A short title")
+          div.description Enter a short title.  This will show up as a header at the top of the poll.
+          div.example Nike or Adidas
+      div.form-elt
+        div.label Question
+        div.padding5
+          input(type="text", name='description', placeholder='The question you want to poll')
+          div.description Enter the question you want to ask.
+          div.example Which do you think has better shoes for soccer - Nike or Adidas?
+      div.form-elt
+        div.label Choice #1
+        div.padding5
+          input(type="text", name='choice0', placeholder='A short description of the choice')
+          input(type="hidden", name='lchoice0')
+          div.description Enter the first answer in the poll. Keep it short to be effective.
+          div.example "Nike" and "I prefer to wear Nike."
+      div.form-elt
+        div.label Choice #2
+        div.padding5
+          input(type="text", name='choice1', placeholder='A short description of the choice')
+          input(type="hidden", name='lchoice1', placeholder='Description of the choice')
+          div.description Enter the second answer in the poll.  Keep it short to be effective.
+      div.form-elt
+        div.label Choice #3
+        div.padding5
+          input(type="text", name='choice2', placeholder='Description of the choice')
+          input(type="hidden", name='lchoice2', placeholder='Description of the choice')
+      div.form-elt
+        div.label Choice #4
+        div.padding5
+          input(type="text", name='choice3', placeholder='Description of the choice')
+          input(type="hidden", name='lchoice3', placeholder='Description of the choice')
+      div.form-elt
+        div.label Choice #5
+        div.padding5
+          input(type="text", name='choice4', placeholder='Description of the choice')
+          input(type="hidden", name='lchoice4', placeholder='Description of the choice')
+      div.form-elt
+        div.label Choice #6
+        div.padding5
+          input(type="text", name='choice5', placeholder='Description of the choice')
+          input(type="hidden", name='lchoice5', placeholder='Description of the choice')
+      div.center
+        button(type=submit,name=submit) CREATE

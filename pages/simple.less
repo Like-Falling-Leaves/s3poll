@@ -1,0 +1,92 @@
+html, body { margin: 0; padding: 0; border: 0; }
+
+// colors
+@activeColor: #fa5e41;
+@backgroundColor: rgb(221, 236, 191);
+
+// top level styles
+html, body {
+  background: white;
+  font-family: Helvetica, sans-serif;
+  color: @activeColor;
+  min-height: 100%;
+}
+
+body {
+  max-width: 500px;
+  margin: auto auto;
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (min-width: 501px) and (min-device-width: 501px) {
+  body { margin-top: 100px; }
+}
+
+.header { 
+  background: @activeColor; 
+  color: @backgroundColor; 
+  font-size: 20px; 
+  height: 50px;
+  line-height: 50px;
+  box-sizing: border-box;
+  padding: 0 15px;
+  overflow: hidden;
+  text-align: center;
+}
+
+table { width: 100%; border-collapse: collapse; margin-top: 15px;}
+table, tr, td { border: 1px solid white;; padding: 0;}
+.contents { padding: 15px; box-sizing: border-box; }
+
+.percentage { position: relative; padding: 3px 7px;}
+.meter { display: inline-block; position: absolute; top: 0; left: 0; width: 0%; height: 100%; background-color: @backgroundColor;}
+.percentage span { position: relative; text-transform: capitalize; }
+
+li.choice { list-style-type: none; }
+li.choice .fa-check-square-o { display: none; }
+li.choice.checked .fa-square-o { display: none; }
+li.choice.checked .fa-check-square-o { display: inline; }
+li.choice { cursor: pointer; }
+body div.contents { display: none; }
+body.vote div.contents.vote { display: block; }
+body.voting div.contents.voting { display: block; }
+body.summarizing div.contents.summarizing { display: block; }
+body.summarized div.contents.summarized { display: block; }
+
+.hidden { display: none; }
+
+.share, .make { 
+  margin-top: 20px; 
+  text-align: center; 
+  padding: 10px;
+  border: 1px solid @activeColor;
+  background: @backgroundColor;
+  border-radius: 5px;
+}
+
+div.buttony {  margin-top: 10px; }
+
+.share .fa { 
+  display: inline-block; 
+  border: 1px solid @activeColor; 
+  padding: 5px; 
+  margin: 0 15px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.share .fa { cursor: pointer; padding: 10px; }
+
+.share input { 
+  display: block; 
+  width: 100%;
+  font-size: 16px; 
+  padding: 5px; 
+  border: 1px solid @activeColor; 
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+a, a:visited, a:active { text-decoration: none; color: @activeColor; }
